@@ -44,8 +44,9 @@ class LinkedList {
       count++;
       current = current.next;
     }
-    return element;
+    console.log("Element is Found:" +element);
   }
+  
   delete(index) {
     if (index > 0 && index > this.size) return -1;
     else {
