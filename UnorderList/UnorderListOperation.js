@@ -2,7 +2,7 @@ let readline = require("readline-sync");
 let fs = require("fs");
 let OrderList = require("../OrderList/OrderList");
 let fileData = fs.readFileSync("./ReadUnorderList.txt");
-let array = fileData.toString().split(" ");
+let array = fileData.toString().split(' ');
 console.log(array);
 
 array.forEach((element) => {
@@ -12,7 +12,7 @@ array.forEach((element) => {
 let display = OrderList.printList();
 console.log(display);
 
-fs.writeFileSync("./WriteUnorderList.txt", display);
+fs.writeFileSync("./ReadUnorderList.txt", display);
 
 let find = readline.question("Enter the Name you want to Delete or Add:");
 let check = OrderList.searchElement(find);
@@ -25,4 +25,4 @@ if (check) {
 let displayFile = OrderList.showElement();
 console.log(displayFile);
 
-fs.writeFileSync("./WriteUnorderList.txt", displayFile);
+fs.writeFileSync("./ReadUnorderList.txt", displayFile.join(' '));
