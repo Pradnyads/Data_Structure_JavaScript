@@ -12,9 +12,9 @@ array.forEach((element) => {
 let display = OrderList.printList();
 console.log(display);
 
-fs.writeFileSync("./WriteOrderList.txt", display);
+fs.writeFileSync("./ReadOrderList.txt", display);
 
-let find = readline.question("Enter the number you want to delete :");
+let find = readline.question("Enter the number you want to delete or Add :");
 let check = OrderList.searchElement(find);
 if (check) {
   OrderList.delete(find);
@@ -25,4 +25,4 @@ if (check) {
 let displayFile = OrderList.showElement();
 console.log(displayFile);
 
-fs.writeFileSync("./WriteOrderList.txt", displayFile);
+fs.writeFileSync("./ReadOrderList.txt", displayFile.join(' '));
